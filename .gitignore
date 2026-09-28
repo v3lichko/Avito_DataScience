@@ -5,3 +5,10 @@ data/
 *.pkl
 *.pt
 answer_v*.csv
+.venv/
+.idea/
+data/
+*.npy
+*.pkl
+*.pt
+answer_v*.csv
