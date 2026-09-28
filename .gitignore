@@ -1,0 +1,7 @@
+.venv/
+.idea/
+data/
+*.npy
+*.pkl
+*.pt
+answer_v*.csv

@@ -11,7 +11,7 @@ def make_local_split(
     n_eval_queries: int = 3000,
     corpus_size: int = 150_000,
     random_state: int = 42,
-) -> Tuple[pd.DataFrame, List[str], List[str], List[int]]:
+) -> Tuple[pd.DataFrame, List[str], List[str], List[int], pd.DataFrame]:
     rng = np.random.default_rng(random_state)
     n = len(train_df)
     n_eval_queries = min(n_eval_queries, n // 2)
@@ -36,7 +36,7 @@ def make_local_split(
     pos_in_corpus = {orig_idx: pos for pos, orig_idx in enumerate(corpus_idx)}
     true_item_positions = [pos_in_corpus[orig_idx] for orig_idx in eval_idx]
 
-    return eval_queries_df, corpus_item_texts, eval_query_texts, true_item_positions
+    return eval_queries_df, corpus_item_texts, eval_query_texts, true_item_positions, corpus_df
 
 
 def recall_at_k(
